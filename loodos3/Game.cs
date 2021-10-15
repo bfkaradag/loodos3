@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace loodos3
@@ -13,14 +14,17 @@ namespace loodos3
             Console.WriteLine("Oyun bitti!\nSkorlar:");
             Console.WriteLine("_____________________");
 
+
             for (int i = 0; i < gameScores.Count; i++)
             {
                 Console.WriteLine($"Oyuncu {gameScores[i].id}: {gameScores[i].score}");
             }
             List<Player> highestScores = Actions.orderByHighest(gameScores, "score");
+            if (highestScores[0].score == highestScores[1].score)
+                Console.WriteLine("\nBerabere!");
+            else
+                Console.WriteLine($"\nKazanan: Oyuncu {highestScores[0].id}  Skor: {highestScores[0].score}");
 
-
-            Console.WriteLine($"\nKazanan: Oyuncu {highestScores[0].id}  Skor: {highestScores[0].score}");
         }
         public static List<Player> play(List<Player> players, List<Card> cards)
         {

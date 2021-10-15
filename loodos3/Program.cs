@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 public enum Faces { A, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J, Q, K };
-public enum state { HIT, STAND, BUST}
 
 namespace loodos3
 {
